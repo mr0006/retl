@@ -105,7 +105,9 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> source1",
-				"source1 derive(Booking_Amt = iif(isNull(BKNG_AMT),0,toInteger(BKNG_AMT))) ~> derivedColumn1"
+				"source1 derive(Booking_Amt = iif(isNull(BKNG_AMT),0,toInteger(BKNG_AMT)),",
+				"          Booking_Source_Type = iif(BKNG_SRC_FLG=='MOB','MySales', iif(length(BKNG_SRC_FLG)>0,'Online','DMS')),",
+				"          Booking_Source = iif(upper(BKNG_SRC_FLG)=='MOB','Mobile',upper(BKNG_SRC_FLG))) ~> derivedColumn1"
 			]
 		}
 	}
