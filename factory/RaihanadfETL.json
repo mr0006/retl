@@ -1,0 +1,9 @@
+{
+	"name": "RaihanadfETL",
+	"location": "southindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "d8441a8a-6ab7-4d86-b7a9-821e42c05fd2",
+		"tenantId": "3d8ff5e6-de45-4568-b852-44e71d23d415"
+	}
+}
